@@ -1,16 +1,24 @@
 {
-	"name": "HelloWorldNodeApp",
+	"name": "sample-cloud-native-toolchain-slabs",
 	"version": "0.0.1",
-    "private": true,
+  "private": true,
 	"scripts": {
-		"start": "node app.js"
+		"start": "node app.js",
+		"test": "./node_modules/.bin/mocha instant-sauce-mocha-test3.js"
 	},
 	"dependencies": {
 		"express": "4.13.x",
-		"cfenv": "1.0.x"
+		"cfenv": "1.0.x",
+		"debug": "^4.1.1",
+		"http-errors": "^1.7.1",
+		"selenium-webdriver": "3.6.0",
+		"mocha": "^5.2.0"
 	},
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
 	"repository": {},
 	"engines": {
 		"node": "4.2.x || 6.x"
-	} 
+	}
 }
