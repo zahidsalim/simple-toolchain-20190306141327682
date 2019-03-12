@@ -12,10 +12,10 @@
 		"debug": "^4.1.1",
 		"http-errors": "^1.7.1",
 		"selenium-webdriver": "3.6.0",
-		"mocha": "^6.0.2"
+		"mocha": "^5.2.0"
 	},
 	"repository": {},
 	"engines": {
-		"node": "4.2.x || 6.x"
+		"node": "4.2.x || 6.x || 8.x.x || 10.x.x"
 	}
 }
