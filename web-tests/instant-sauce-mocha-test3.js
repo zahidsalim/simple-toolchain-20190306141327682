@@ -31,6 +31,7 @@ describe('Instant Sauce Test Module 3', function() {
         driver.getSession().then(function (sessionid) {
             driver.sessionID = sessionid.id_;
         });
+        
         done();
     });
 
