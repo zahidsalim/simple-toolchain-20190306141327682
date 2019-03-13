@@ -7,7 +7,7 @@ var webdriver = require('selenium-webdriver'),
       accessKey = "2e54545a-83c0-4ff4-9b45-ab8bd400e76f",
     /* Change the baseURL to your application URL */
     baseUrl = "https://www.saucedemo.com";
-
+    var driver;
 
 describe('Instant Sauce Test Module 3', function() {
     this.timeout(40000);
@@ -16,7 +16,8 @@ describe('Instant Sauce Test Module 3', function() {
      */
     beforeEach(function (done) {
         var testName = this.currentTest.title;
-        var driver = new webdriver.Builder().withCapabilities({
+        console.log('testName==',testName);
+        driver = new webdriver.Builder().withCapabilities({
             'browserName': 'chrome',
             'platform': 'Windows 10',
             'version': '59.0',
@@ -27,7 +28,10 @@ describe('Instant Sauce Test Module 3', function() {
         }).usingServer("http://" + username + ":" + accessKey +
             "@ondemand.saucelabs.com:80/wd/hub").build();
 
+        console.log('driver1==',driver);
+
         driver.getSession().then(function (sessionid) {
+          console.log('driver2==',driver);
             driver.sessionID = sessionid.id_;
         });
 
@@ -37,11 +41,13 @@ describe('Instant Sauce Test Module 3', function() {
     /* Here we add any post-requisite tasks, such as sending the test results to Sauce Labs.com*/
     afterEach(function (done) {
         driver.executeScript("sauce:job-result=" + (true ? "passed" : "failed"));
+        console.log('driver3==',driver);
         driver.quit();
         done();
     });
 
     it('should-open-chrome ', function (done) {
+        console.log('driver4==',driver);
         driver.get(baseUrl);
         driver.getTitle().then(function (title) {
             console.log("title is: " + title);
