@@ -6,7 +6,7 @@ var webdriver = require('selenium-webdriver'),
 //    accessKey = process.env.SAUCE_ACCESS_KEY,
       accessKey = "2e54545a-83c0-4ff4-9b45-ab8bd400e76f",
     /* Change the baseURL to your application URL */
-    baseUrl = "https://www.saucedemo.com";
+    baseUrl = "https://sample-cloud-native-toolchain-slabs.mybluemix.net/";
     var driver;
 
 describe('Instant Sauce Test Module 3', function() {
