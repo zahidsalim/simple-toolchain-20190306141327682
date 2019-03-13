@@ -2,7 +2,7 @@
 var webdriver = require('selenium-webdriver'),
     assert = require('assert'),
   //  username = process.env.SAUCE_USERNAME,
-      username = "zahid.salim";
+      username = "zahid.salim",
 //    accessKey = process.env.SAUCE_ACCESS_KEY,
       accessKey = "2e54545a-83c0-4ff4-9b45-ab8bd400e76f",
     /* Change the baseURL to your application URL */
@@ -31,7 +31,7 @@ describe('Instant Sauce Test Module 3', function() {
         driver.getSession().then(function (sessionid) {
             driver.sessionID = sessionid.id_;
         });
-        
+
         done();
     });
 
