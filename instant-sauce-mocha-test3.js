@@ -16,7 +16,7 @@ describe('Instant Sauce Test Module 3', function() {
      */
     beforeEach(function (done) {
         var testName = this.currentTest.title;
-        console.log('testName==',testName);
+        console.log('TEST NAME is ==> ',testName);
         driver = new webdriver.Builder().withCapabilities({
             'browserName': 'chrome',
             'platform': 'Windows 10',
@@ -27,8 +27,6 @@ describe('Instant Sauce Test Module 3', function() {
             'name': '3-cross-browser',
         }).usingServer("http://" + username + ":" + accessKey +
             "@ondemand.saucelabs.com:80/wd/hub").build();
-
-        console.log('driver1==',driver);
 
         driver.getSession().then(function (sessionid) {
           console.log('driver2==',driver);
@@ -41,13 +39,11 @@ describe('Instant Sauce Test Module 3', function() {
     /* Here we add any post-requisite tasks, such as sending the test results to Sauce Labs.com*/
     afterEach(function (done) {
         driver.executeScript("sauce:job-result=" + (true ? "passed" : "failed"));
-        console.log('driver3==',driver);
         driver.quit();
         done();
     });
 
     it('should-open-chrome ', function (done) {
-        console.log('driver4==',driver);
         driver.get(baseUrl);
         driver.getTitle().then(function (title) {
             console.log("title is: " + title);
