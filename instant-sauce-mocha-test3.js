@@ -42,6 +42,10 @@ describe('Instant Sauce Test Module 3', function() {
         done();
     });
 
+    after(function () {
+        console.log("after all tests");
+    });
+
     it('should-open-chrome ', function (done) {
         driver.get(baseUrl);
         driver.getTitle().then(function (title) {
