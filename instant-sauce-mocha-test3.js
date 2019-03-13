@@ -29,7 +29,6 @@ describe('Instant Sauce Test Module 3', function() {
             "@ondemand.saucelabs.com:80/wd/hub").build();
 
         driver.getSession().then(function (sessionid) {
-          console.log('driver2==',driver);
             driver.sessionID = sessionid.id_;
         });
 
@@ -46,7 +45,7 @@ describe('Instant Sauce Test Module 3', function() {
     it('should-open-chrome ', function (done) {
         driver.get(baseUrl);
         driver.getTitle().then(function (title) {
-            console.log("title is: " + title);
+            console.log("Title is: " + title);
             assert(true);
             done();
         });
