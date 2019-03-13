@@ -6,8 +6,7 @@ var webdriver = require('selenium-webdriver'),
 //    accessKey = process.env.SAUCE_ACCESS_KEY,
       accessKey = "2e54545a-83c0-4ff4-9b45-ab8bd400e76f",
     /* Change the baseURL to your application URL */
-    baseUrl = "https://www.saucedemo.com",
-    driver;
+    baseUrl = "https://www.saucedemo.com";
 
 
 describe('Instant Sauce Test Module 3', function() {
@@ -17,7 +16,7 @@ describe('Instant Sauce Test Module 3', function() {
      */
     beforeEach(function (done) {
         var testName = this.currentTest.title;
-        driver = new webdriver.Builder().withCapabilities({
+        var driver = new webdriver.Builder().withCapabilities({
             'browserName': 'chrome',
             'platform': 'Windows 10',
             'version': '59.0',
@@ -31,7 +30,7 @@ describe('Instant Sauce Test Module 3', function() {
         driver.getSession().then(function (sessionid) {
             driver.sessionID = sessionid.id_;
         });
-        
+
         done();
     });
 
