@@ -7,10 +7,10 @@ var webdriver = require('selenium-webdriver'),
     accessKey = process.env.SAUCE_ACCESS_KEY,
 
     /* Change the baseURL to your application URL */
-    baseUrl = "https://www.saucedemo.com",
-    driver;
+    baseUrl = "https://sample-cloud-native-toolchain-slabs.mybluemix.net/";
+      var driver;
 
-describe('Instant Sauce Test Module 1', function() {
+describe('Instant Sauce Test Module 2', function() {
     this.timeout(40000);
     it('should-open-safari', function (done) {
         driver = new webdriver.Builder().withCapabilities({

@@ -9,6 +9,14 @@ var webdriver = require('selenium-webdriver'),
     baseUrl = "https://sample-cloud-native-toolchain-slabs.mybluemix.net/";
     var driver;
 
+    function importTest(name, path) {
+    console.log('Entered importTest. Path=',path);
+    describe(name, function () {
+        require(path);
+        });
+    }
+
+
 describe('Instant Sauce Test Module 3', function() {
     this.timeout(40000);
     /* Now we will add a beforeEach method using the Mocha framework in order to
@@ -54,4 +62,9 @@ describe('Instant Sauce Test Module 3', function() {
             done();
         });
     });
+
+
+    importTest("a", './web-tests/instant-sauce-mocha-test2.js');
+
+
 });
