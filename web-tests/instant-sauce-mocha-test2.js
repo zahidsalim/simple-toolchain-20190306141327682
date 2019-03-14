@@ -3,12 +3,12 @@ var webdriver = require('selenium-webdriver'),
     for more information on how to do this, please visit:
     https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Environment+Variables+for+Authentication+Credentials
      */
-    username = process.env.SAUCE_USERNAME,
-    accessKey = process.env.SAUCE_ACCESS_KEY,
+    username = "zahid.salim",
+    accessKey = "2e54545a-83c0-4ff4-9b45-ab8bd400e76f",
 
     /* Change the baseURL to your application URL */
     baseUrl = "https://sample-cloud-native-toolchain-slabs.mybluemix.net/";
-      var driver;
+    var driver;
 
 describe('Instant Sauce Test Module 2', function() {
   console.log('Entered Instant Sauce Test Module 2');

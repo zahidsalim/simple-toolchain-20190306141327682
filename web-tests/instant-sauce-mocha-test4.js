@@ -1,12 +1,12 @@
 
 var webdriver = require('selenium-webdriver'),
     assert = require('assert'),
-    username = process.env.SAUCE_USERNAME,
-    accessKey = process.env.SAUCE_ACCESS_KEY,
+    username = "zahid.salim",
+    accessKey = "2e54545a-83c0-4ff4-9b45-ab8bd400e76f",
     /* Change the baseURL to your application URL */
-    baseUrl = "https://www.saucedemo.com",
-    tags = ["sauceDemo", "demoTest", "module4", "nodeTest"],
-    driver;
+    baseUrl = "https://sample-cloud-native-toolchain-slabs.mybluemix.net/",
+    tags = ["sauceDemo", "demoTest", "module4", "nodeTest"];
+  var  driver;
 
 
 describe('Instant Sauce Test Module 4', function() {
