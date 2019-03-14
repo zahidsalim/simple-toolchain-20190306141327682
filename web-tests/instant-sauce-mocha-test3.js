@@ -2,12 +2,19 @@
 var webdriver = require('selenium-webdriver'),
     assert = require('assert'),
   //  username = process.env.SAUCE_USERNAME,
-      username = "zahid.salim",
+      username = "zahid.salim";
 //    accessKey = process.env.SAUCE_ACCESS_KEY,
       accessKey = "2e54545a-83c0-4ff4-9b45-ab8bd400e76f",
     /* Change the baseURL to your application URL */
-    baseUrl = "https://www.saucedemo.com";
+    baseUrl = "https://sample-cloud-native-toolchain-slabs.mybluemix.net/";
+    var driver;
 
+    function importTest(name, path) {
+    console.log('Entered importTest. Path=',path);
+    describe(name, function () {
+        require(path);
+        });
+    }
 
 
 describe('Instant Sauce Test Module 3', function() {
@@ -17,7 +24,8 @@ describe('Instant Sauce Test Module 3', function() {
      */
     beforeEach(function (done) {
         var testName = this.currentTest.title;
-        var driver = new webdriver.Builder().withCapabilities({
+        console.log('TEST NAME is ==> ',testName);
+        driver = new webdriver.Builder().withCapabilities({
             'browserName': 'chrome',
             'platform': 'Windows 10',
             'version': '59.0',
@@ -42,12 +50,23 @@ describe('Instant Sauce Test Module 3', function() {
         done();
     });
 
+    //importTest("a", './web-tests/instant-sauce-mocha-test2.js');
+
+    after(function () {
+        console.log("after all tests");
+    });
+
     it('should-open-chrome ', function (done) {
         driver.get(baseUrl);
         driver.getTitle().then(function (title) {
-            console.log("title is: " + title);
+            console.log("Title is: " + title);
             assert(true);
             done();
         });
     });
+
+
+
+
+
 });
