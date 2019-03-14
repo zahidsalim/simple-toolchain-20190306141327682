@@ -11,6 +11,7 @@ var webdriver = require('selenium-webdriver'),
       var driver;
 
 describe('Instant Sauce Test Module 2', function() {
+  console.log('Entered Instant Sauce Test Module 2');
     this.timeout(40000);
     it('should-open-safari', function (done) {
         driver = new webdriver.Builder().withCapabilities({
