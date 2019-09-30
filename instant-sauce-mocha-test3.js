@@ -2,9 +2,9 @@
 var webdriver = require('selenium-webdriver'),
     assert = require('assert'),
   //  username = process.env.SAUCE_USERNAME,
-      username = "zahid.salim";
+      username = "yadav.o";
 //    accessKey = process.env.SAUCE_ACCESS_KEY,
-      accessKey = "2e54545a-83c0-4ff4-9b45-ab8bd400e76f",
+      accessKey = "bb24ec0b-cf6f-4c84-acbe-5fe1a6fbc6b5",
     /* Change the baseURL to your application URL */
     baseUrl = "https://sample-cloud-native-toolchain-slabs.mybluemix.net/";
     var driver;

@@ -6,8 +6,8 @@ var webdriver = require('selenium-webdriver'),
 //    accessKey = process.env.SAUCE_ACCESS_KEY,
       accessKey = "bb24ec0b-cf6f-4c84-acbe-5fe1a6fbc6b5",
     /* Change the baseURL to your application URL */
-  //  baseUrl = "https://sample-cloud-native-toolchain-slabs.mybluemix.net/";
-    baseUrl = "https://www.saucedemo.com/";
+    baseUrl = "https://sample-cloud-native-toolchain-slabs.mybluemix.net/";
+  //  baseUrl = "https://www.saucedemo.com/";
     var driver;
 
     function importTest(name, path) {
