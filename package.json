@@ -4,7 +4,7 @@
   "private": true,
 	"scripts": {
 		"start": "node app.js",
-		"test": "./node_modules/.bin/mocha main-test.js"
+		"test": "mocha main-test.js"
 	},
 	"dependencies": {
 		"express": "4.13.x",
