@@ -5,23 +5,17 @@ var webdriver = require('selenium-webdriver'),
       console.log(`Exit code is:`);
     });
 
-    function importTest(name, path) {
-      console.log('Entered importTest');
-        describe(name, function () {
-            require(path);
-        });
-    }
 
-// function importTest(name, path) {
-//   console.log('Entered inportTest');
-//     describe(name, function () {
-//         require(path);
-//     });
-// }
+function importTest(name, path) {
+  console.log('Entered importTest');
+    describe(name, function () {
+        require(path);
+    });
+}
 
 
 describe("Executing Main Test Script", function () {
-  console.log("Entered describe...............");
+  console.log("Entered main test script");
     beforeEach(function () {
        console.log("running something before each test");
     });
