@@ -9,6 +9,9 @@
 	"dependencies": {
 		"express": "4.13.x",
 		"cfenv": "1.0.x",
+		"async": "^2.6.1",
+		"asyncawait": "^1.0.7",
+		"await": "^0.2.6",
 		"debug": "^4.1.1",
 		"http-errors": "^1.7.1",
 		"selenium-webdriver": "4.0.0-alpha.5",

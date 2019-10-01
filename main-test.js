@@ -2,6 +2,7 @@ var webdriver = require('selenium-webdriver'),
     assert = require('assert');
 
 function importTest(name, path) {
+  console.log('Entered inportTest');
     describe(name, function () {
         require(path);
     });

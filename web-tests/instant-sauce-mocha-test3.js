@@ -46,6 +46,7 @@ describe('Instant Sauce Test Module 3', function() {
 
     /* Here we add any post-requisite tasks, such as sending the test results to Sauce Labs.com*/
     afterEach(function (done) {
+      console.log('afterEach 3');
         driver.executeScript("sauce:job-result=" + (true ? "passed" : "failed"));
         driver.quit();
         done();
