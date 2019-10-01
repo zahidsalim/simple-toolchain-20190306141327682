@@ -1,14 +1,16 @@
 
-var webdriver = require('selenium-webdriver'),
-    assert = require('assert'),
-  //  username = process.env.SAUCE_USERNAME,
-      username = "yadav.o";
-//    accessKey = process.env.SAUCE_ACCESS_KEY,
-      accessKey = "bb24ec0b-cf6f-4c84-acbe-5fe1a6fbc6b5",
-    /* Change the baseURL to your application URL */
-    baseUrl = "https://simple-sauce-lab.mybluemix.net/";
-  //  baseUrl = "https://www.saucedemo.com/";
-    var driver;
+const promise = require('selenium-webdriver');
+let expect = require('chai').expect;
+let webdriver = require('selenium-webdriver');
+
+promise.USE_PROMISE_MANAGER = false;
+
+let   username = "yadav.o",
+     accessKey = "bb24ec0b-cf6f-4c84-acbe-5fe1a6fbc6b5",
+   /* Change the baseURL to your application URL */
+   baseUrl = "https://simple-sauce-lab.mybluemix.net/";
+   tags = ["simple-sauce-lab", "on-boarding", "node", "mocha" ],
+   driver;
 
     function importTest(name, path) {
     console.log('Entered importTest. Path=',path);
@@ -23,33 +25,38 @@ describe('Instant Sauce Test Module 3', function() {
     /* Now we will add a beforeEach method using the Mocha framework in order to
     set prerequiste tasks for each test case, in this case we're setting the driver capabilities.
      */
-    beforeEach(function (done) {
-        var testName = this.currentTest.title;
-        console.log('TEST NAME is ==> ',testName);
-        driver = new webdriver.Builder().withCapabilities({
-            'browserName': 'chrome',
-            'platform': 'Windows 10',
-            'version': '59.0',
+    beforeEach(async function () {
+      driver = await new webdriver.Builder().withCapabilities({
+        'browserName': 'chrome',
+        'platformName': 'Windows 10',
+        'browserVersion': 'latest',
+        'goog:chromeOptions' : { 'w3c' : true },
+        'sauce:options': {
             'username': username,
             'accessKey': accessKey,
-            'build': 'Onboarding Sample App - NodeJS',
-            'name': '3-cross-browser',
+            'build': 'Onboarding Sample App - NodeJS + Mocha',
+            'name': '4-best-practices',
+            /* As a best practice, set important test metadata and execution options
+            such as build info, tags for reporting, and timeout durations.
+            */
+            'maxDuration': 3600,
+            'idleTimeout': 1000,
+            'tags': tags
+          }
         }).usingServer("http://" + username + ":" + accessKey +
             "@ondemand.saucelabs.com:80/wd/hub").build();
-
-        driver.getSession().then(function (sessionid) {
-            driver.sessionID = sessionid.id_;
+            await driver.getSession().then(function (sessionid) {
+                  driver.sessionID = sessionid.id_;
+              });
         });
 
-        done();
     });
 
     /* Here we add any post-requisite tasks, such as sending the test results to Sauce Labs.com*/
     afterEach(function (done) {
       console.log('afterEach 3');
-        driver.executeScript("sauce:job-result=" + (true ? "passed" : "failed"));
-        driver.quit();
-        done();
+      await driver.executeScript("sauce:job-result=" + (this.currentTest.state));
+        await driver.quit();
     });
 
     //importTest("a", './web-tests/instant-sauce-mocha-test2.js');
@@ -59,16 +66,9 @@ describe('Instant Sauce Test Module 3', function() {
     });
 
     it('should-open-chrome ', function (done) {
-        driver.get(baseUrl);
-        driver.getTitle().then(function (title) {
-            console.log("Title is: " + title);
-            assert(true);
-            done();
+      await driver.get(baseUrl);
+      const title = await driver.getTitle();
+      console.log('Page Title is: ' + title);
+      expect(title).equals('Swag Labs');
         });
-    });
-
-
-
-
-
 });
