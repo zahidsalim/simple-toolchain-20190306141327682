@@ -1,15 +1,27 @@
 var webdriver = require('selenium-webdriver'),
     assert = require('assert');
 
-function importTest(name, path) {
-  console.log('Entered inportTest');
-    describe(name, function () {
-        require(path);
+    child.on('importTest' => {
+      console.log(`Exit code is:`);
     });
-}
+
+    function importTest(name, path) {
+      console.log('Entered importTest');
+        describe(name, function () {
+            require(path);
+        });
+    }
+
+// function importTest(name, path) {
+//   console.log('Entered inportTest');
+//     describe(name, function () {
+//         require(path);
+//     });
+// }
 
 
 describe("Executing Main Test Script", function () {
+  console.log("Entered describe...............");
     beforeEach(function () {
        console.log("running something before each test");
     });
