@@ -8,12 +8,14 @@
   },
   "dependencies": {
     "cfenv": "1.0.x",
-    "chai": "^4.2.0",
     "debug": "^4.1.1",
     "express": "4.13.x",
     "http-errors": "^1.7.1",
     "mocha": "^5.2.0",
-    "selenium-webdriver": "4.0.0-alpha.5"
+    "selenium-webdriver": "4.0.0-alpha.5",
+		"mocha": "^5.2.0",
+    "chai": "^4.2.0",
+    "selenium-webdriver": "^4.0.0-alpha.1"
   },
   "repository": {},
   "engines": {
