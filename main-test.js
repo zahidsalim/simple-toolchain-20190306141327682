@@ -1,10 +1,6 @@
 var webdriver = require('selenium-webdriver'),
     assert = require('assert');
 
-    child.on('importTest' => {
-      console.log(`Exit code is:`);
-    });
-
 
 function importTest(name, path) {
   console.log('Entered importTest');
