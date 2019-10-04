@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "test": "mocha **/*.main-test.js"
+    "test": "mocha main-test.js"
   },
   "dependencies": {
     "cfenv": "1.0.x",
