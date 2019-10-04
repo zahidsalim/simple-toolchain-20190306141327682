@@ -4,7 +4,7 @@ var webdriver = require('selenium-webdriver'),
   //  username = process.env.SAUCE_USERNAME,
       username = "yadav.o";
 //    accessKey = process.env.SAUCE_ACCESS_KEY,
-      accessKey = "bb24ec0b-cf6f-4c84-acbe-5fe1a6fbc6b5",
+      accessKey = "5efda2fe-a095-4414-9f86-8a8dba244838",
     /* Change the baseURL to your application URL */
     baseUrl = "https://sample-cloud-native-toolchain-slabs.mybluemix.net/";
     var driver;
