@@ -59,18 +59,20 @@ describe('Instant Sauce Test Module -- Safari', function() {
 
     it('should-open-Safari ', function (done) {
         driver.get(baseUrl);
+        console.log('Title=====',driver.get(baseUrl));
         console.log('baseUrl--->',baseUrl);
         driver.getTitle().then(function (title) {
             console.log("Title is: " + title);
             if(title=="Sauce Lab Testing"){
               console.log('Assert True');
             assert(true);
+            done();
           }
           else {
             console.log('Assert False');
               assert(false);
           }
-            done();
+
         });
     });
 
