@@ -45,7 +45,7 @@ describe('Instant Sauce Test Module -- Firefox', function() {
 
     /* Here we add any post-requisite tasks, such as sending the test results to Sauce Labs.com*/
     afterEach(function (done) {
-      console.log('afterEach for Chrome');
+      console.log('afterEach for Firefox');
         driver.executeScript("sauce:job-result=" + (true ? "passed" : "failed"));
         driver.quit();
         done();
@@ -54,10 +54,10 @@ describe('Instant Sauce Test Module -- Firefox', function() {
     //importTest("a", './web-tests/instant-sauce-mocha-test2.js');
 
     after(function () {
-        console.log("after all tests -- Chrome");
+        console.log("after all tests -- Firefox");
     });
 
-    it('should-open-chrome ', function (done) {
+    it('should-open-firefox ', function (done) {
         driver.get(baseUrl);
         console.log('baseUrl--->',baseUrl);
         driver.getTitle().then(function (title) {
