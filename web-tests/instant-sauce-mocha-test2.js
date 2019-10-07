@@ -1,19 +1,30 @@
-var webdriver = require('selenium-webdriver'),
-    /* Use a run configuration and/or a bash profile to set your environment variables,
-    for more information on how to do this, please visit:
-    https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Environment+Variables+for+Authentication+Credentials
-     */
-    username = "yadav.o",
-    accessKey = "bb24ec0b-cf6f-4c84-acbe-5fe1a6fbc6b5",
 
+var webdriver = require('selenium-webdriver'),
+    assert = require('assert'),
+  //  username = process.env.SAUCE_USERNAME,
+      username = "yadav.o";
+//    accessKey = process.env.SAUCE_ACCESS_KEY,
+      accessKey = "5efda2fe-a095-4414-9f86-8a8dba244838",
     /* Change the baseURL to your application URL */
     baseUrl = "https://sample-cloud-native-toolchain-slabs.mybluemix.net/";
     var driver;
 
-describe('Instant Sauce Test Module 2', function() {
-  console.log('Entered Instant Sauce Test Module 2');
+    function importTest(name, path) {
+    console.log('Entered importTest. Path=',path);
+    describe(name, function () {
+        require(path);
+        });
+    }
+
+
+describe('Instant Sauce Test Module -- Safari', function() {
     this.timeout(40000);
-    it('should-open-safari', function (done) {
+    /* Now we will add a beforeEach method using the Mocha framework in order to
+    set prerequiste tasks for each test case, in this case we're setting the driver capabilities.
+     */
+    beforeEach(function (done) {
+        var testName = this.currentTest.title;
+        console.log('TEST NAME is ==> ',testName);
         driver = new webdriver.Builder().withCapabilities({
             'browserName': 'safari',
             'platform': 'macOS 10.13',
@@ -25,11 +36,39 @@ describe('Instant Sauce Test Module 2', function() {
         }).usingServer("http://" + username + ":" + accessKey +
             "@ondemand.saucelabs.com:80/wd/hub").build();
 
-        driver.get(baseUrl);
-        driver.getTitle().then(function (title) {
-            console.log("title is: " + title);
+        driver.getSession().then(function (sessionid) {
+            driver.sessionID = sessionid.id_;
         });
+
+        done();
+    });
+
+    /* Here we add any post-requisite tasks, such as sending the test results to Sauce Labs.com*/
+    afterEach(function (done) {
+      console.log('afterEach for Safari');
+        driver.executeScript("sauce:job-result=" + (true ? "passed" : "failed"));
         driver.quit();
         done();
     });
+
+    //importTest("a", './web-tests/instant-sauce-mocha-test2.js');
+
+    after(function () {
+        console.log("after all tests - Safari");
+    });
+
+    it('should-open-Safari ', function (done) {
+        driver.get(baseUrl);
+        console.log('baseUrl--->',baseUrl);
+        driver.getTitle().then(function (title) {
+            console.log("Title is: " + title);
+            assert(true);
+            done();
+        });
+    });
+
+
+
+
+
 });

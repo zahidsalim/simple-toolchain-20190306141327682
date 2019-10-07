@@ -17,7 +17,7 @@ var webdriver = require('selenium-webdriver'),
     }
 
 
-describe('Instant Sauce Test Module 3', function() {
+describe('Instant Sauce Test Module -- Chrome', function() {
     this.timeout(40000);
     /* Now we will add a beforeEach method using the Mocha framework in order to
     set prerequiste tasks for each test case, in this case we're setting the driver capabilities.
@@ -45,7 +45,7 @@ describe('Instant Sauce Test Module 3', function() {
 
     /* Here we add any post-requisite tasks, such as sending the test results to Sauce Labs.com*/
     afterEach(function (done) {
-      console.log('afterEach 3...');
+      console.log('afterEach for Chrome');
         driver.executeScript("sauce:job-result=" + (true ? "passed" : "failed"));
         driver.quit();
         done();
@@ -54,7 +54,7 @@ describe('Instant Sauce Test Module 3', function() {
     //importTest("a", './web-tests/instant-sauce-mocha-test2.js');
 
     after(function () {
-        console.log("after all tests");
+        console.log("after all tests -- Chrome");
     });
 
     it('should-open-chrome ', function (done) {
