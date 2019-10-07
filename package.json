@@ -12,12 +12,11 @@
     "express": "4.13.x",
     "http-errors": "^1.7.1",
     "mocha": "5.2.0",
-    "selenium-webdriver": "4.0.0-alpha.5",
     "chai": "^4.2.0",
     "selenium-webdriver": "^4.0.0-alpha.1"
   },
   "repository": {},
   "engines": {
-    "node": ">=4"
+    "node": "8.11.3"
   }
 }
