@@ -8,7 +8,7 @@ var webdriver = require('selenium-webdriver'),
     /* Change the baseURL to your application URL */
     baseUrl = "https://sample-cloud-native-toolchain-slabs.mybluemix.net/";
     var driver;
-
+    console.log('process.env.SAUCE_ACCESS_KEY==',process.env.SAUCE_ACCESS_KEY);
     function importTest(name, path) {
     console.log('Entered importTest. Path=',path);
     describe(name, function () {
