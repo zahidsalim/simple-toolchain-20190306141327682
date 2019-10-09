@@ -1,8 +1,8 @@
 
 var webdriver = require('selenium-webdriver'),
     assert = require('assert'),
-  //  username = process.env.SAUCE_USERNAME,
-  username = "panwar_n";
+    username = process.env.SAUCE_USERNAME,
+//  username = "panwar_n";
     accessKey = process.env.SAUCE_ACCESS_KEY,
 //  accessKey = "e3af7f98-4dbc-4a67-a2d1-1cd94dbc3f1d",
     /* Change the baseURL to your application URL */
