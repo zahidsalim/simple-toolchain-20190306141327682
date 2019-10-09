@@ -10,7 +10,7 @@ var webdriver = require('selenium-webdriver'),
     var driver;
 
     function importTest(name, path) {
-    console.log('Entered importTest. Path=',path);
+    console.log('Entered importTest -- Chrome . Path=',path);
     describe(name, function () {
         require(path);
         });

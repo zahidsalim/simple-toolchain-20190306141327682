@@ -3,7 +3,7 @@ var webdriver = require('selenium-webdriver'),
 
 
 function importTest(name, path) {
-  console.log('Entered importTest');
+  console.log('Entered importTest in main-test');
     describe(name, function () {
         require(path);
     });
@@ -11,7 +11,7 @@ function importTest(name, path) {
 
 
 describe("Executing Main Test Script", function () {
-  console.log("Entered main test script");
+  console.log("Entered main-test script");
     beforeEach(function () {
        console.log("running something before each test");
     });
@@ -21,6 +21,6 @@ describe("Executing Main Test Script", function () {
   //  importTest("c", './web-tests/instant-sauce-mocha-test1.js');
     importTest("d", './web-tests/instant-sauce-mocha-test4.js');
     after(function () {
-        console.log("after all tests");
+        console.log("after all tests in main-test");
     });
 });
