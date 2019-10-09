@@ -1,14 +1,15 @@
 var webdriver = require('selenium-webdriver'),
     /* Change the username and accessKey to your Saucelabs.com credentials */
-    username = "yadav.o",
-    accessKey = "bb24ec0b-cf6f-4c84-acbe-5fe1a6fbc6b5",
+    username = "panwar_n";
+//    accessKey = process.env.SAUCE_ACCESS_KEY,
+    accessKey = "e3af7f98-4dbc-4a67-a2d1-1cd94dbc3f1d",
     /* Base URL sets the target test application */
     baseUrl = "https://sample-cloud-native-toolchain-slabs.mybluemix.net/";
     /* driver instantiates via callback */
   var driver;
 
     /* Describe is a way to group your tests together and set test suite parameters like timetous */
-describe('Instant Sauce Test Module 1', function() {
+describe('Instant Sauce Test Module -- Safari', function() {
     this.timeout(40000);
     /* it represents an actual test, the parameters are the title of the test case */
     it('should-open-safari', function (done) {

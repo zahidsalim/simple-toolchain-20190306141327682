@@ -1,10 +1,9 @@
 
 var webdriver = require('selenium-webdriver'),
     assert = require('assert'),
-  //  username = process.env.SAUCE_USERNAME,
-      username = "yadav.o";
+    username = "panwar_n";
 //    accessKey = process.env.SAUCE_ACCESS_KEY,
-      accessKey = "5efda2fe-a095-4414-9f86-8a8dba244838",
+    accessKey = "e3af7f98-4dbc-4a67-a2d1-1cd94dbc3f1d",
     /* Change the baseURL to your application URL */
     baseUrl = "https://sample-cloud-native-toolchain-slabs.mybluemix.net/";
     var driver;
@@ -65,7 +64,7 @@ describe('Instant Sauce Test Module -- Safari', function() {
             console.log("Title is: " + title);
 
             assert(true);
-        
+
             done();
         });
     });
