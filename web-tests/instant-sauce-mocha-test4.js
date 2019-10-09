@@ -22,6 +22,7 @@ describe('Instant Sauce Test Module -- Firefox', function() {
     /* Now we will add a beforeEach method using the Mocha framework in order to
     set prerequiste tasks for each test case, in this case we're setting the driver capabilities.
      */
+     console.log('accessKey====',accessKey);
     beforeEach(function (done) {
         var testName = this.currentTest.title;
         console.log('TEST NAME is ==> ',testName);

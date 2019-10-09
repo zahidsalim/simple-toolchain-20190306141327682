@@ -1,8 +1,8 @@
 var webdriver = require('selenium-webdriver'),
     /* Change the username and accessKey to your Saucelabs.com credentials */
     username = "panwar_n";
-//    accessKey = process.env.SAUCE_ACCESS_KEY,
-    accessKey = "e3af7f98-4dbc-4a67-a2d1-1cd94dbc3f1d",
+    accessKey = process.env.SAUCE_ACCESS_KEY,
+//    accessKey = "e3af7f98-4dbc-4a67-a2d1-1cd94dbc3f1d",
     /* Base URL sets the target test application */
     baseUrl = "https://sample-cloud-native-toolchain-slabs.mybluemix.net/";
     /* driver instantiates via callback */
